@@ -1779,6 +1779,197 @@ const MODULES = [
   },
 
   // ─────────────────────────────────────────
+  // MÓDULO 12: VOLÚMENES (cuerpos geométricos)
+  // ─────────────────────────────────────────
+  {
+    id: 12,
+    title: "Volumen de los cuerpos geométricos",
+    meta: "Prismas, cilindros, conos, esferas y troncos",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Cuerpos con dos bases iguales (prisma, cilindro) tienen volumen base × altura. Los que terminan en punta (pirámide, cono) son <strong>un tercio</strong> de eso. Y la esfera tiene su propia fórmula clásica.</p>
+      </div>
+
+      <h3 class="section-title">Prismas y cilindros</h3>
+
+      <div class="diagram">
+        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Prisma hexagonal -->
+          <polygon points="40,40 90,30 110,55 90,90 40,100 20,75" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5"/>
+          <polygon points="40,75 90,65 110,90 90,125 40,135 20,110" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="40" y1="40" x2="40" y2="75" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="90" y1="30" x2="90" y2="65" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="110" y1="55" x2="110" y2="90" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="90" y1="90" x2="90" y2="125" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="20" y1="75" x2="20" y2="110" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="40" y1="100" x2="40" y2="135" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="120" y="78" font-family="Fraunces" font-size="14" font-style="italic" fill="#dc2626">h</text>
+          <!-- Cilindro -->
+          <ellipse cx="210" cy="50" rx="40" ry="10" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="170" y1="50" x2="170" y2="120" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="250" y1="50" x2="250" y2="120" stroke="#1a1a1a" stroke-width="1.5"/>
+          <ellipse cx="210" cy="120" rx="40" ry="10" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="210" y1="50" x2="250" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+          <text x="225" y="48" font-family="Fraunces" font-size="14" font-style="italic" fill="#2563eb">r</text>
+          <text x="260" y="88" font-family="Fraunces" font-size="14" font-style="italic" fill="#dc2626">h</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Volumen — prismas y cilindros</div>
+        $$V_{\\\\text{prisma}} = A_{\\\\text{base}} \\\\cdot h \\\\qquad V_{\\\\text{cilindro}} = \\\\pi r^2 \\\\cdot h$$
+      </div>
+
+      <h3 class="section-title">Pirámides y conos</h3>
+
+      <div class="diagram">
+        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pirámide -->
+          <polygon points="30,120 90,105 110,130 60,145" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="30" y1="120" x2="70" y2="20" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="90" y1="105" x2="70" y2="20" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="110" y1="130" x2="70" y2="20" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="60" y1="145" x2="70" y2="20" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="70" y1="20" x2="70" y2="130" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="76" y="78" font-family="Fraunces" font-size="14" font-style="italic" fill="#dc2626">h</text>
+          <!-- Cono -->
+          <polygon points="170,130 250,130 210,30" fill="#fecaca" stroke="#1a1a1a" stroke-width="1.5"/>
+          <ellipse cx="210" cy="130" rx="40" ry="9" fill="#fecaca" stroke="#1a1a1a" stroke-width="1.5"/>
+          <line x1="210" y1="30" x2="210" y2="130" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <line x1="210" y1="130" x2="250" y2="130" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="195" y="85" font-family="Fraunces" font-size="14" font-style="italic" fill="#dc2626">h</text>
+          <text x="225" y="143" font-family="Fraunces" font-size="14" font-style="italic" fill="#2563eb">r</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Volumen — pirámides y conos (un tercio)</div>
+        $$V_{\\\\text{pirámide}} = \\\\frac{1}{3} A_{\\\\text{base}} \\\\cdot h \\\\qquad V_{\\\\text{cono}} = \\\\frac{1}{3} \\\\pi r^2 \\\\cdot h$$
+      </div>
+
+      <h3 class="section-title">Esfera</h3>
+
+      <div class="diagram">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="70" r="55" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5"/>
+          <ellipse cx="100" cy="70" rx="55" ry="15" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="2,2"/>
+          <line x1="100" y1="70" x2="155" y2="70" stroke="#2563eb" stroke-width="1.5"/>
+          <circle cx="100" cy="70" r="2" fill="#1a1a1a"/>
+          <text x="120" y="65" font-family="Fraunces" font-size="14" font-style="italic" fill="#2563eb">R</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Volumen de la esfera</div>
+        $$V = \\\\frac{4}{3} \\\\pi R^3$$
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Relación elegante:</strong> el volumen de la esfera es <strong>2/3 del cilindro</strong> que la envuelve. Y se cumple: <em>Semiesfera + Cono = Cilindro</em> (con el mismo radio R y altura R para el cono, 2R para el cilindro).</div>
+      </div>
+
+      <h3 class="section-title">Ejemplo: cilindro</h3>
+      <div class="example">
+        <div class="label">Ejemplo resuelto</div>
+        <div class="problem">Calcula el volumen de un cilindro de radio 5 cm y altura 12 cm.</div>
+        <div class="step"><span class="num">1.</span> $V = \\\\pi r^2 h = \\\\pi \\\\cdot 5^2 \\\\cdot 12 = 300\\\\pi$ cm³.</div>
+        <div class="step"><span class="num">2.</span> $V \\\\approx 942{,}48$ cm³.</div>
+        <div class="answer">$V = 300\\\\pi \\\\approx 942{,}48$ cm³.</div>
+      </div>
+
+      <h3 class="section-title">Ejemplo: cono</h3>
+      <div class="example">
+        <div class="label">Ejemplo resuelto</div>
+        <div class="problem">Un cono tiene radio 6 cm y altura 9 cm. Calcula su volumen.</div>
+        <div class="step"><span class="num">1.</span> $V = \\\\frac{1}{3} \\\\pi r^2 h = \\\\frac{1}{3} \\\\pi \\\\cdot 6^2 \\\\cdot 9 = 108\\\\pi$ cm³.</div>
+        <div class="answer">$V = 108\\\\pi \\\\approx 339{,}29$ cm³.</div>
+      </div>
+
+      <h3 class="section-title">Ejemplo: esfera</h3>
+      <div class="example">
+        <div class="label">Ejemplo resuelto</div>
+        <div class="problem">Calcula el volumen de una esfera de radio 3 cm.</div>
+        <div class="step"><span class="num">1.</span> $V = \\\\frac{4}{3} \\\\pi R^3 = \\\\frac{4}{3} \\\\pi \\\\cdot 27 = 36\\\\pi$ cm³.</div>
+        <div class="answer">$V = 36\\\\pi \\\\approx 113{,}10$ cm³.</div>
+      </div>
+
+      <h3 class="section-title">Tronco de cono (cono cortado)</h3>
+
+      <div class="prose">
+        <p>Cuando cortas un cono con un plano paralelo a la base, queda un <em>tronco</em>. La idea es <strong>calcular el cono entero menos el cono pequeño</strong> que sobra arriba.</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Tronco de cono</div>
+        $$V_{\\\\text{tronco}} = V_{\\\\text{cono grande}} - V_{\\\\text{cono pequeño}}$$
+        <p style="margin-top:8px;font-size:13px;color:var(--ink-soft);">Para hallar el radio del cono pequeño, usa <strong>semejanza</strong> (Tales).</p>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · tronco de cono</div>
+        <div class="problem">Un cono de 10 cm de radio en la base y 30 cm de altura se corta por un plano paralelo a la base, a 12 cm de ella. Calcula el volumen del tronco.</div>
+        <div class="step"><span class="num">1.</span> Cono pequeño (la "punta" que sale arriba): su altura es $30 - 12 = 18$ cm.</div>
+        <div class="step"><span class="num">2.</span> Por semejanza: $\\\\frac{18}{r} = \\\\frac{30}{10} \\\\Rightarrow r = 6$ cm.</div>
+        <div class="step"><span class="num">3.</span> Volumen cono grande: $V_G = \\\\frac{1}{3}\\\\pi \\\\cdot 100 \\\\cdot 30 = 1000\\\\pi$.</div>
+        <div class="step"><span class="num">4.</span> Volumen cono pequeño: $V_P = \\\\frac{1}{3}\\\\pi \\\\cdot 36 \\\\cdot 18 = 216\\\\pi$.</div>
+        <div class="step"><span class="num">5.</span> Tronco: $V_T = 1000\\\\pi - 216\\\\pi = 784\\\\pi \\\\approx 2461{,}76$ cm³.</div>
+        <div class="answer">$V \\\\approx 2461{,}76$ cm³.</div>
+      </div>
+
+      <h3 class="section-title">Quiz</h3>
+
+      <div class="quiz">
+        <div class="quiz-question">
+          <div class="q-text">Un cilindro tiene radio 4 cm y altura 10 cm. ¿Cuál es su volumen?</div>
+          <button class="quiz-option" data-correct="false">80π cm³</button>
+          <button class="quiz-option" data-correct="true">160π cm³</button>
+          <button class="quiz-option" data-correct="false">40π cm³</button>
+          <button class="quiz-option" data-correct="false">200π cm³</button>
+          <div class="quiz-feedback" data-explain="V = πr²h = π·16·10 = 160π cm³ ≈ 502,65 cm³."></div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="q-text">Una pirámide cuadrangular tiene lado de base 6 cm y altura 9 cm. ¿Cuál es su volumen?</div>
+          <button class="quiz-option" data-correct="false">324 cm³</button>
+          <button class="quiz-option" data-correct="true">108 cm³</button>
+          <button class="quiz-option" data-correct="false">54 cm³</button>
+          <button class="quiz-option" data-correct="false">36 cm³</button>
+          <div class="quiz-feedback" data-explain="V = (1/3)·Abase·h = (1/3)·36·9 = 108 cm³."></div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="q-text">El volumen de una esfera de radio 6 cm es:</div>
+          <button class="quiz-option" data-correct="true">288π cm³</button>
+          <button class="quiz-option" data-correct="false">144π cm³</button>
+          <button class="quiz-option" data-correct="false">216π cm³</button>
+          <button class="quiz-option" data-correct="false">72π cm³</button>
+          <div class="quiz-feedback" data-explain="V = (4/3)π·6³ = (4/3)π·216 = 288π cm³ ≈ 904,78 cm³."></div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="q-text">¿Cuál es la relación entre el volumen de un cono y el de un cilindro con la misma base y altura?</div>
+          <button class="quiz-option" data-correct="false">El cono es la mitad del cilindro</button>
+          <button class="quiz-option" data-correct="true">El cono es un tercio del cilindro</button>
+          <button class="quiz-option" data-correct="false">El cono es un cuarto del cilindro</button>
+          <button class="quiz-option" data-correct="false">Tienen el mismo volumen</button>
+          <div class="quiz-feedback" data-explain="V_cono = (1/3)·V_cilindro. Por eso necesitas tres conos para llenar un cilindro de la misma base y altura."></div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Estrategia general:</strong>
+        <br>• Identifica el cuerpo simple (cilindro, cono, esfera).
+        <br>• Si es un trozo, calcula el cuerpo completo y luego resta lo que sobra.
+        <br>• Cuando hay un corte paralelo, usa <strong>Tales (semejanza)</strong> para calcular las dimensiones del trozo.
+        <br>• Vigila las unidades: 1 m³ = 1000 dm³ = 1 000 000 cm³.</div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
   // MÓDULO 11: AUTOEVALUACIÓN (PRIORIDAD)
   // ─────────────────────────────────────────
   {
