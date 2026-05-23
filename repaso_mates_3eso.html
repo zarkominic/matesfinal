@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Repaso Mates · 3º ESO · Examen Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root {
+  --paper: #faf6ef;
+  --paper-dark: #f0e9dc;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --coral: #c4392a;
+  --coral-light: #e57264;
+  --blue: #2c5f8e;
+  --green: #2d7a3e;
+  --gold: #b8860b;
+  --line: rgba(26,26,26,0.12);
+  --shadow: rgba(26,26,26,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  overscroll-behavior: none;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(196,57,42,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(44,95,142,0.03) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+.app-header h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.app-header .subtitle {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.menu-btn {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HOME / INDEX */
+.home {
+  padding: 24px 20px 100px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.home-intro {
+  margin-bottom: 28px;
+}
+.home-intro .eyebrow {
+  font-size: 12px;
+  color: var(--coral);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.home-intro h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.home-intro p {
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.priority-banner {
+  background: linear-gradient(135deg, var(--coral) 0%, var(--coral-light) 100%);
+  color: white;
+  padding: 18px 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(196,57,42,0.25);
+}
+.priority-banner .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.priority-banner .title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.priority-banner .desc {
+  font-size: 14px;
+  opacity: 0.92;
+}
+
+.module-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.module-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+}
+.module-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.module-card .num {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--coral);
+  width: 36px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.module-card .info {
+  flex: 1;
+  min-width: 0;
+}
+.module-card .info .title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.module-card .info .meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.module-card .arrow {
+  color: var(--ink-soft);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.module-card.priority {
+  background: #fff8f5;
+  border-color: rgba(196,57,42,0.3);
+}
+.module-card.priority .num { color: var(--coral); }
+
+/* MODULE VIEW */
+.module-view {
+  display: none;
+  padding: 20px 20px 120px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.module-view.active { display: block; }
+
+.module-header {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+}
+.module-header .back {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+.module-header .num {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  color: var(--coral);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.module-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 28px 0 12px;
+  letter-spacing: -0.01em;
+}
+.section-title::before {
+  content: "§ ";
+  color: var(--coral);
+}
+
+.prose {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.prose p { margin-bottom: 10px; }
+.prose strong { font-weight: 600; }
+.prose em { color: var(--ink-soft); font-style: italic; }
+
+/* FORMULA BOX */
+.formula {
+  background: white;
+  border-left: 3px solid var(--coral);
+  padding: 14px 16px;
+  margin: 14px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  overflow-x: auto;
+}
+.formula .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--coral);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* TIP BOX */
+.tip {
+  background: #fff8e6;
+  border: 1px solid rgba(184,134,11,0.3);
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 14px 0;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.tip .icon {
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* WORKED EXAMPLE */
+.example {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
+}
+.example .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.example .problem {
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+}
+.example .step {
+  margin: 10px 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--paper-dark);
+  font-size: 14px;
+}
+.example .step .num {
+  color: var(--coral);
+  font-weight: 700;
+  margin-right: 6px;
+}
+.example .answer {
+  background: var(--paper);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.example .answer::before {
+  content: "→ ";
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* QUIZ */
+.quiz {
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 24px 0;
+}
+.quiz .quiz-label {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.quiz .quiz-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.quiz-question {
+  margin-bottom: 18px;
+}
+.quiz-question:last-child { margin-bottom: 0; }
+.quiz-question .q-num {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.quiz-question .q-text {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quiz-option {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  color: inherit;
+  text-align: left;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.quiz-option:active { transform: scale(0.98); }
+.quiz-option .letter {
+  background: white;
+  border: 1.5px solid var(--line);
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.quiz-option.correct {
+  background: #e8f5ec;
+  border-color: var(--green);
+  color: var(--green);
+}
+.quiz-option.correct .letter {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+.quiz-option.wrong {
+  background: #fdeae8;
+  border-color: var(--coral);
+  color: var(--coral);
+}
+.quiz-option.wrong .letter {
+  background: var(--coral);
+  color: white;
+  border-color: var(--coral);
+}
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.quiz-option.correct:disabled, .quiz-option.wrong:disabled {
+  opacity: 1;
+}
+.quiz-feedback {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: none;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct {
+  background: #e8f5ec;
+  color: var(--green);
+  border: 1px solid rgba(45,122,62,0.3);
+}
+.quiz-feedback.wrong {
+  background: #fdeae8;
+  color: var(--coral);
+  border: 1px solid rgba(196,57,42,0.3);
+}
+.quiz-feedback strong { font-weight: 700; }
+
+/* PROGRESS BAR */
+.progress {
+  background: var(--paper-dark);
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 16px 0 24px;
+}
+.progress-bar {
+  background: linear-gradient(90deg, var(--coral), var(--coral-light));
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* FLOATING NAV */
+.module-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  padding: 6px;
+  gap: 4px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  z-index: 90;
+}
+.module-nav button {
+  background: none;
+  border: none;
+  color: var(--paper);
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.module-nav button.home-btn {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.module-nav button:disabled { opacity: 0.4; }
+
+/* SVG DIAGRAMS */
+.diagram {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+}
+.diagram svg { max-width: 100%; height: auto; }
+
+/* TABLE */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 14px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.data-table th, .data-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.data-table th {
+  background: var(--paper-dark);
+  font-weight: 600;
+  font-size: 13px;
+}
+.data-table tr:last-child td { border-bottom: none; }
+
+/* MENU OVERLAY */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26,26,26,0.6);
+  z-index: 200;
+  display: none;
+  align-items: flex-end;
+}
+.menu-overlay.show { display: flex; }
+.menu-panel {
+  background: var(--paper);
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 32px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.menu-panel h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.menu-list { display: flex; flex-direction: column; gap: 4px; }
+.menu-item {
+  background: none;
+  border: none;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: inherit;
+  text-align: left;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.menu-item:active { background: var(--paper-dark); }
+.menu-item .num {
+  font-family: 'Fraunces', serif;
+  color: var(--coral);
+  font-weight: 600;
+  width: 24px;
+}
+
+/* FOOTER NOTE */
+.footer-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 700px) {
+  .home { padding: 40px 20px 120px; }
+  .home-intro h2 { font-size: 40px; }
+  .module-view { padding: 32px 24px 120px; }
+  .module-header h2 { font-size: 34px; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div style="flex:1;">
+    <div class="subtitle">Mates · 3º ESO</div>
+    <h1>Repaso Examen Final</h1>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- HOME -->
+<main class="home" id="home">
+  <div class="home-intro">
+    <div class="eyebrow">Guía interactiva</div>
+    <h2>Todo lo que entra en el examen, organizado por temas.</h2>
+    <p>Lee la teoría, mira los ejemplos resueltos y comprueba si lo has entendido con los mini-tests. Puedes volver a empezar tantas veces como quieras.</p>
+  </div>
+
+  <div class="priority-banner">
+    <div class="label">⚠ Lo más probable que entre</div>
+    <div class="title">Ejercicios tipo Autoevaluación</div>
+    <div class="desc">Los ejercicios de la página 225 son trabajo obligatorio antes del examen. Ve al módulo 11.</div>
+  </div>
+
+  <div class="module-grid" id="moduleGrid"></div>
+
+  <div class="footer-note">
+    Guía de repaso · Mayo 2026 · Hecha para vosotros 📚
+  </div>
+</main>
+
+<!-- MODULE CONTENT WILL BE INJECTED HERE -->
+<div id="moduleContainer"></div>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(event)">
+  <div class="menu-panel" onclick="event.stopPropagation()">
+    <h3>Índice de temas</h3>
+    <div class="menu-list" id="menuList"></div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// CONTENIDO DE LOS 11 MÓDULOS
+// ============================================
+
+const MODULES = [
+  // ─────────────────────────────────────────
+  // MÓDULO 1: RELACIONES ANGULARES
+  // ─────────────────────────────────────────
+  {
+    id: 1,
+    title: "Relaciones angulares",
+    meta: "Ángulos entre paralelas · suma en triángulos y polígonos",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Cuando dos rectas paralelas son cortadas por otra recta (secante), se forman 8 ángulos que se relacionan entre sí de manera muy útil. Conocer estas relaciones nos permite encontrar ángulos sin medirlos.</p>
+      </div>
+
+      <h3 class="section-title">Ángulos al cortar dos paralelas</h3>
+
+      <div class="diagram">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="70" x2="300" y2="70" stroke="#1a1a1a" stroke-width="2"/>
+          <line x1="20" y1="170" x2="300" y2="170" stroke="#1a1a1a" stroke-width="2"/>
+          <line x1="80" y1="20" x2="240" y2="210" stroke="#c4392a" stroke-width="2"/>
+          <text x="120" y="55" font-family="Fraunces" font-size="14" font-weight="600">1</text>
+          <text x="155" y="55" font-family="Fraunces" font-size="14" font-weight="600">2</text>
+          <text x="120" y="92" font-family="Fraunces" font-size="14" font-weight="600">3</text>
+          <text x="155" y="92" font-family="Fraunces" font-size="14" font-weight="600">4</text>
+          <text x="170" y="155" font-family="Fraunces" font-size="14" font-weight="600">5</text>
+          <text x="205" y="155" font-family="Fraunces" font-size="14" font-weight="600">6</text>
+          <text x="170" y="192" font-family="Fraunces" font-size="14" font-weight="600">7</text>
+          <text x="205" y="192" font-family="Fraunces" font-size="14" font-weight="600">8</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Relaciones clave</div>
+        <p><strong>Opuestos por el vértice</strong> (iguales): 1=3, 2=4, 5=7, 6=8</p>
+        <p><strong>Correspondientes</strong> (iguales): 1=5, 2=6, 3=7, 4=8</p>
+        <p><strong>Alternos internos</strong> (iguales): 3=5, 4=6</p>
+        <p><strong>Alternos externos</strong> (iguales): 1=7, 2=8</p>
+      </div>
+
+      <h3 class="section-title">Suma de ángulos de un triángulo</h3>
+
+      <div class="formula">
+        <div class="label">Regla de oro</div>
+        $$\\alpha + \\beta + \\gamma = 180°$$
+      </div>
+
+      <div class="prose">
+        <p>Los tres ángulos de cualquier triángulo (no importa la forma) siempre suman 180°. Esto te permite encontrar el tercer ángulo si conoces los otros dos.</p>
+      </div>
+
+      <h3 class="section-title">Ángulos de un polígono</h3>
+
+      <div class="formula">
+        <div class="label">Fórmulas que tienes que saber</div>
+        <p>Suma total de los ángulos de un polígono de $n$ lados:</p>
+        $$S = 180° \\cdot (n - 2)$$
+        <p style="margin-top:8px;">Cada ángulo de un polígono <em>regular</em>:</p>
+        $$\\hat{A} = \\frac{180° \\cdot (n - 2)}{n}$$
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Truco rápido:</strong> un polígono de $n$ lados se descompone en $n-2$ triángulos. Como cada triángulo aporta 180°, multiplica y listo.</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo resuelto</div>
+        <div class="problem">Calcular cada ángulo de un <strong>hexágono regular</strong>.</div>
+        <div class="step"><span class="num">1.</span> El hexágono tiene $n = 6$ lados.</div>
+        <div class="step"><span class="num">2.</span> Suma total: $180° \\cdot (6-2) = 180° \\cdot 4 = 720°$.</div>
+        <div class="step"><span class="num">3.</span> Como es regular, dividimos entre 6: $720° / 6 = 120°$.</div>
+        <div class="answer">Cada ángulo del hexágono regular mide $120°$.</div>
+      </div>
+
+      <div class="quiz" data-quiz="1">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">En un triángulo, dos ángulos miden 37° y 112°. ¿Cuánto mide el tercer ángulo?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 21°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 31°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 41°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 51°</button>
+          </div>
+          <div class="quiz-feedback" data-explain="180° − 37° − 112° = 31°. Recuerda que la suma de los tres ángulos siempre da 180°."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">¿Cuánto suman los ángulos interiores de un octógono (8 lados)?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 900°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 1080°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 1260°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 1440°</button>
+          </div>
+          <div class="quiz-feedback" data-explain="180° · (8 − 2) = 180° · 6 = 1080°."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">¿Cuánto mide cada ángulo interior de un pentágono regular?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 90°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 100°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 108°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 120°</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Suma total: 180° · 3 = 540°. Como es regular, dividimos entre 5: 540° / 5 = 108°."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 2: ÁNGULOS EN LA CIRCUNFERENCIA
+  // ─────────────────────────────────────────
+  {
+    id: 2,
+    title: "Ángulos en la circunferencia",
+    meta: "Ángulo central · ángulo inscrito",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Cuando un ángulo está dentro de una circunferencia, su medida depende de dónde tenga el vértice. Hay dos casos importantes que tienes que dominar:</p>
+      </div>
+
+      <h3 class="section-title">Ángulo central</h3>
+      <div class="prose">
+        <p>Su <strong>vértice está en el centro</strong> de la circunferencia. La medida del arco coincide con la medida del ángulo central.</p>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="110" cy="100" r="70" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <circle cx="110" cy="100" r="3" fill="#1a1a1a"/>
+          <line x1="110" y1="100" x2="175" y2="65" stroke="#c4392a" stroke-width="2"/>
+          <line x1="110" y1="100" x2="175" y2="135" stroke="#c4392a" stroke-width="2"/>
+          <path d="M 145,80 A 25,25 0 0,1 145,120" fill="none" stroke="#2c5f8e" stroke-width="2"/>
+          <text x="155" y="105" font-family="Fraunces" font-size="14">α</text>
+          <text x="180" y="60" font-size="12">P</text>
+          <text x="180" y="145" font-size="12">Q</text>
+          <text x="95" y="105" font-size="12">O</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Propiedad</div>
+        $$\\text{arco } \\widehat{PQ} = \\text{ángulo central } \\widehat{POQ}$$
+      </div>
+
+      <h3 class="section-title">Ángulo inscrito</h3>
+      <div class="prose">
+        <p>Su <strong>vértice está sobre la circunferencia</strong>, y sus lados pasan por dos puntos del círculo. La regla más útil del tema:</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Regla clave del tema</div>
+        $$\\text{ángulo inscrito} = \\frac{\\text{ángulo central}}{2} = \\frac{\\text{arco que abarca}}{2}$$
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Consecuencias importantes:</strong>
+        <br>• Dos ángulos inscritos que abarcan el mismo arco son <strong>iguales</strong>.
+        <br>• Todo ángulo inscrito en una <strong>semicircunferencia es recto</strong> (90°), porque abarca un arco de 180°.</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo resuelto</div>
+        <div class="problem">Una circunferencia se divide en 5 arcos iguales. ¿Cuánto mide un ángulo inscrito que abarca 2 de esos arcos?</div>
+        <div class="step"><span class="num">1.</span> Cada arco mide $360° / 5 = 72°$.</div>
+        <div class="step"><span class="num">2.</span> Dos arcos seguidos abarcan $2 \\cdot 72° = 144°$.</div>
+        <div class="step"><span class="num">3.</span> El ángulo inscrito es la mitad del arco: $144° / 2 = 72°$.</div>
+        <div class="answer">El ángulo inscrito mide $72°$.</div>
+      </div>
+
+      <div class="quiz" data-quiz="2">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">Un ángulo central mide 80°. ¿Cuánto mide un ángulo inscrito que abarca el mismo arco?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 80°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 160°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 40°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 20°</button>
+          </div>
+          <div class="quiz-feedback" data-explain="El ángulo inscrito siempre es la mitad del central que abarca el mismo arco: 80° / 2 = 40°."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">Si P y Q son los extremos de un diámetro y R es otro punto de la circunferencia, ¿cuánto mide el ángulo PRQ?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 45°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 60°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 90°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> Depende del punto R</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Todo ángulo inscrito en una semicircunferencia es recto (90°). El diámetro abarca un arco de 180°, así que el ángulo inscrito mide 180°/2 = 90°."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Una circunferencia se divide en 8 arcos iguales. ¿Cuánto mide cada arco?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 36°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 40°</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 45°</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 60°</button>
+          </div>
+          <div class="quiz-feedback" data-explain="360° / 8 = 45°."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 3: TRIÁNGULOS SEMEJANTES Y TALES
+  // ─────────────────────────────────────────
+  {
+    id: 3,
+    title: "Semejanza y Tales",
+    meta: "Triángulos semejantes · teorema de Tales",
+    priority: false,
+    content: `
+      <h3 class="section-title">Teorema de Tales</h3>
+      <div class="prose">
+        <p>Cuando varias rectas <strong>paralelas</strong> cortan a dos rectas secantes, los segmentos que determinan son <strong>proporcionales</strong>.</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Fórmula de Tales</div>
+        $$\\frac{\\overline{AB}}{\\overline{A'B'}} = \\frac{\\overline{BC}}{\\overline{B'C'}} = \\frac{\\overline{AC}}{\\overline{A'C'}}$$
+      </div>
+
+      <h3 class="section-title">Triángulos semejantes</h3>
+      <div class="prose">
+        <p>Dos triángulos son <strong>semejantes</strong> cuando tienen la misma forma (aunque sean de distinto tamaño). Esto se cumple si:</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Condiciones de semejanza</div>
+        <p>• Sus lados son <strong>proporcionales</strong>:</p>
+        $$\\frac{a}{a'} = \\frac{b}{b'} = \\frac{c}{c'} = k$$
+        <p>donde $k$ se llama <em>razón de semejanza</em>.</p>
+        <p style="margin-top:8px;">• Sus ángulos son <strong>iguales</strong>: $\\hat{A} = \\hat{A}'$, $\\hat{B} = \\hat{B}'$, $\\hat{C} = \\hat{C}'$.</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Criterio de oro:</strong> Si dos triángulos tienen <strong>dos ángulos iguales</strong>, ya son semejantes (el tercero también será igual porque los tres ángulos suman 180°).</div>
+      </div>
+
+      <h3 class="section-title">Triángulos en posición de Tales</h3>
+      <div class="prose">
+        <p>Dos triángulos están en <strong>posición de Tales</strong> cuando uno está encajado dentro del otro, comparten un ángulo, y los lados opuestos a ese ángulo son paralelos. Estos dos triángulos siempre son semejantes.</p>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo resuelto · estilo examen</div>
+        <div class="problem">Una heladería tiene cucuruchos de 18 cm, 15 cm y 10 cm de alto. El pequeño lleva bolas de 4 cm de diámetro. ¿Qué tamaño tienen las bolas del mediano y del grande?</div>
+        <div class="step"><span class="num">1.</span> Los cucuruchos son semejantes. La proporción entre la altura del pequeño y su bola es: $10 / 4$.</div>
+        <div class="step"><span class="num">2.</span> Aplicamos la misma proporción al mediano ($x$ es su bola):
+        $$\\frac{10}{4} = \\frac{15}{x} \\Rightarrow x = \\frac{15 \\cdot 4}{10} = 6 \\text{ cm}$$</div>
+        <div class="step"><span class="num">3.</span> Y al grande ($y$ es su bola):
+        $$\\frac{10}{4} = \\frac{18}{y} \\Rightarrow y = \\frac{18 \\cdot 4}{10} = 7{,}2 \\text{ cm}$$</div>
+        <div class="answer">Bola mediana: 6 cm. Bola grande: 7,2 cm.</div>
+      </div>
+
+      <div class="quiz" data-quiz="3">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">Dos triángulos son semejantes con razón de semejanza k = 3. Si un lado del triángulo pequeño mide 5 cm, ¿cuánto mide el lado correspondiente del grande?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 5/3 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 8 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 15 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 25 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Si k = 3, el lado del grande es 3 veces el del pequeño: 5 · 3 = 15 cm."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">¿Cuál es la condición mínima para garantizar que dos triángulos son semejantes?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> Que tengan el mismo área</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> Que tengan un lado igual</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> Que tengan dos ángulos iguales</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> Que tengan el mismo perímetro</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Si dos ángulos son iguales, el tercero también lo es (porque suman 180°), y los lados son proporcionales. ¡Es el criterio más usado!"></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">En un dibujo, una recta paralela a un lado del triángulo corta los otros dos lados en segmentos de 4 y 6 cm. Si en uno de los lados el otro segmento mide 8 cm, ¿cuánto mide el segmento correspondiente del otro lado?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 10 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 12 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 14 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 16 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Por Tales: 4/6 = 8/x. Despejamos: x = 6·8/4 = 12 cm."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 4: TRIÁNGULOS RECTÁNGULOS SEMEJANTES
+  // ─────────────────────────────────────────
+  {
+    id: 4,
+    title: "Aplicaciones de Tales",
+    meta: "Sombras · alturas · escaleras · conos",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>La aplicación más útil del teorema de Tales aparece en problemas reales: medir la altura de un árbol o un edificio usando sombras, calcular cuánto avanza una escalera, o saber cómo cambia un cono al cortarlo. La clave es identificar los <strong>dos triángulos semejantes</strong> y plantear la proporción.</p>
+      </div>
+
+      <h3 class="section-title">El truco de las sombras</h3>
+
+      <div class="formula">
+        <div class="label">Idea clave</div>
+        <p>En un mismo instante, todos los objetos verticales y sus sombras forman triángulos rectángulos <strong>semejantes</strong> (el Sol está tan lejos que sus rayos son paralelos).</p>
+        $$\\frac{\\text{altura objeto 1}}{\\text{sombra objeto 1}} = \\frac{\\text{altura objeto 2}}{\\text{sombra objeto 2}}$$
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · sombras</div>
+        <div class="problem">Cuando mi sombra mide 1,8 m, la sombra de un pino mide 43 m. Si yo mido 1,75 m, ¿cuánto mide el pino?</div>
+        <div class="step"><span class="num">1.</span> Planteo la proporción:
+        $$\\frac{1{,}75}{1{,}8} = \\frac{h}{43}$$</div>
+        <div class="step"><span class="num">2.</span> Despejo $h$:
+        $$h = \\frac{1{,}75 \\cdot 43}{1{,}8} \\approx 41{,}8 \\text{ m}$$</div>
+        <div class="answer">El pino mide aproximadamente 41,8 m.</div>
+      </div>
+
+      <h3 class="section-title">Cortar un cono</h3>
+
+      <div class="example">
+        <div class="label">Ejemplo · cono</div>
+        <div class="problem">Un cono mide 20 cm de altura y su base tiene radio 15 cm. Si lo cortamos para que su altura disminuya 8 cm, ¿cuál es el radio de la nueva base?</div>
+        <div class="step"><span class="num">1.</span> La nueva altura es $20 - 8 = 12$ cm.</div>
+        <div class="step"><span class="num">2.</span> Por semejanza:
+        $$\\frac{20}{15} = \\frac{12}{r}$$</div>
+        <div class="step"><span class="num">3.</span> Despejo $r$:
+        $$r = \\frac{12 \\cdot 15}{20} = 9 \\text{ cm}$$</div>
+        <div class="answer">El nuevo radio mide 9 cm.</div>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Método infalible:</strong>
+        <br>1. Dibuja los dos triángulos por separado.
+        <br>2. Identifica el lado conocido en ambos.
+        <br>3. Plantea: $\\frac{\\text{lado pequeño}_1}{\\text{lado pequeño}_2} = \\frac{\\text{lado grande}_1}{\\text{lado grande}_2}$
+        <br>4. Despeja la incógnita.</div>
+      </div>
+
+      <div class="quiz" data-quiz="4">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">Una farola mide 4 m y proyecta una sombra de 2,7 m. A su lado, un árbol proyecta una sombra de 12 m. ¿Cuánto mide el árbol?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 12,8 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 16 m</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 17,8 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 20,4 m</button>
+          </div>
+          <div class="quiz-feedback" data-explain="4/2,7 = h/12 → h = 4·12/2,7 ≈ 17,8 m."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">Un pozo de 30 m de profundidad tiene una escalera de 50 m que llega al fondo. Si el agua sube hasta los 6 m de altura, ¿cuántos metros de escalera hay que bajar para llegar al agua?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 36 m</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 40 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 44 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 46 m</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Hay que bajar 30 − 6 = 24 m de profundidad. Por semejanza: 30/50 = 24/x → x = 50·24/30 = 40 m."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Un cono de helado mide 15 cm de alto. Le quito la punta de manera que solo quedan 10 cm. Si el helado original lleva una bola de 6 cm, ¿de qué tamaño sería la bola para un cono pequeño semejante de 10 cm?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 3 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 4 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 5 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 9 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="15/6 = 10/x → x = 10·6/15 = 4 cm."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 5: ESCALAS
+  // ─────────────────────────────────────────
+  {
+    id: 5,
+    title: "Figuras semejantes y escalas",
+    meta: "Mapas · planos · maquetas",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Una <strong>escala</strong> es la razón de semejanza entre una reproducción (mapa, plano, maqueta) y la realidad. Te dice cuántas veces es más pequeña (o grande) la copia respecto al original.</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Definición</div>
+        $$\\text{Escala} = \\frac{\\text{medida en el dibujo}}{\\text{medida real}}$$
+      </div>
+
+      <div class="prose">
+        <p>Una escala <strong>1:200</strong> significa que 1 cm del plano corresponde a 200 cm (= 2 m) de la realidad.</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Convertir bien las unidades</strong> es la parte donde más fallos hay. Recuerda:
+        <br>• 1 m = 100 cm
+        <br>• 1 km = 100 000 cm
+        <br>• 1 cm = 10 mm</div>
+      </div>
+
+      <h3 class="section-title">Cómo trabajar con escalas</h3>
+
+      <div class="formula">
+        <div class="label">Las tres preguntas típicas</div>
+        <p><strong>1. ¿Qué escala se ha usado?</strong> Divide la medida del plano entre la medida real (en las mismas unidades).</p>
+        <p><strong>2. ¿Cuánto mide en la realidad?</strong> Multiplica la medida del plano por el denominador de la escala.</p>
+        <p><strong>3. ¿Cuánto mide en el plano?</strong> Divide la medida real entre el denominador de la escala.</p>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · estilo examen</div>
+        <div class="problem">En el plano de una vivienda, una mesa real de 5 m de largo aparece dibujada como un rectángulo de 2 cm. <br><strong>a)</strong> ¿Qué escala se usa? <strong>b)</strong> Si un pasillo en el plano mide 4 cm, ¿cuánto mide en realidad? <strong>c)</strong> Si la cocina mide 3 cm en el plano, ¿cuánto mide en realidad?</div>
+        <div class="step"><span class="num">a.</span> Paso todo a cm: 5 m = 500 cm. Escala = 2/500 = 1/250. La escala es <strong>1:250</strong>.</div>
+        <div class="step"><span class="num">b.</span> Pasillo: 4 cm · 250 = 1000 cm = <strong>10 m</strong>.</div>
+        <div class="step"><span class="num">c.</span> Cocina: 3 cm · 250 = 750 cm = <strong>7,5 m</strong>.</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · mapa</div>
+        <div class="problem">En un mapa de Sicilia, la distancia entre Palermo y Catania (que en realidad son 166 km) aparece dibujada como 8,3 cm. ¿A qué escala está el mapa?</div>
+        <div class="step"><span class="num">1.</span> Paso km a cm: 166 km = 16 600 000 cm.</div>
+        <div class="step"><span class="num">2.</span> Escala = 8,3 / 16 600 000 = 1 / 2 000 000.</div>
+        <div class="answer">La escala es <strong>1:2 000 000</strong>.</div>
+      </div>
+
+      <div class="quiz" data-quiz="5">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">Un plano está a escala 1:100. Una habitación de 5 m de largo, ¿cuántos cm mide en el plano?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 0,5 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 5 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 50 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 500 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="5 m = 500 cm. Como 1 cm del plano = 100 cm reales, dividimos: 500/100 = 5 cm."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">Un camping aparece dibujado a escala 1:3000. Si en el plano dos puntos están a 4 cm, ¿qué distancia hay en realidad?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 30 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 60 m</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 120 m</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 1200 m</button>
+          </div>
+          <div class="quiz-feedback" data-explain="4 cm · 3000 = 12 000 cm = 120 m."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Una maqueta de una célula está a escala 10 000:1. Si la maqueta mide 10 cm, ¿cuánto mide la célula real?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 1 mm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 0,1 mm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 10 μm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 100 μm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="10 000:1 significa que la maqueta es 10 000 veces más grande. Real = 10 cm / 10 000 = 0,001 cm = 10 μm."></div>
+        </div>
+      </div>
+    `
+  }
+,
+// ─────────────────────────────────────────
+  // MÓDULO 6: PITÁGORAS
+  // ─────────────────────────────────────────
+  {
+    id: 6,
+    title: "Teorema de Pitágoras",
+    meta: "Triángulos rectángulos · clasificación",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>El teorema más famoso de las matemáticas. Solo funciona en <strong>triángulos rectángulos</strong> (los que tienen un ángulo de 90°). Si lo dominas, resuelves un montón de problemas: alturas, distancias, diagonales...</p>
+      </div>
+
+      <div class="diagram">
+        <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,140 200,140 200,40" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <rect x="180" y="120" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="118" y="155" font-family="Fraunces" font-size="14" font-weight="600">b (cateto)</text>
+          <text x="205" y="95" font-family="Fraunces" font-size="14" font-weight="600">c (cateto)</text>
+          <text x="100" y="80" font-family="Fraunces" font-size="14" font-weight="600">a (hipotenusa)</text>
+        </svg>
+      </div>
+
+      <div class="formula">
+        <div class="label">Teorema de Pitágoras</div>
+        $$a^2 = b^2 + c^2$$
+        <p style="margin-top:8px;font-size:13px;color:var(--ink-soft);">donde $a$ es la hipotenusa (el lado más largo, opuesto al ángulo recto) y $b$, $c$ son los catetos.</p>
+      </div>
+
+      <h3 class="section-title">Calcular un lado</h3>
+
+      <div class="formula">
+        <div class="label">Despejando cada lado</div>
+        $$a = \\sqrt{b^2 + c^2} \\quad\\quad b = \\sqrt{a^2 - c^2} \\quad\\quad c = \\sqrt{a^2 - b^2}$$
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · calcular hipotenusa</div>
+        <div class="problem">Calcula la hipotenusa de un triángulo rectángulo cuyos catetos miden 5 cm y 12 cm.</div>
+        <div class="step"><span class="num">1.</span> Aplico Pitágoras: $a^2 = 5^2 + 12^2 = 25 + 144 = 169$.</div>
+        <div class="step"><span class="num">2.</span> Saco la raíz: $a = \\sqrt{169} = 13$ cm.</div>
+        <div class="answer">La hipotenusa mide 13 cm.</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · calcular un cateto</div>
+        <div class="problem">La hipotenusa de un triángulo rectángulo mide 45 cm y un cateto, 37 cm. ¿Cuánto mide el otro cateto?</div>
+        <div class="step"><span class="num">1.</span> $c^2 = a^2 - b^2 = 45^2 - 37^2 = 2025 - 1369 = 656$.</div>
+        <div class="step"><span class="num">2.</span> $c = \\sqrt{656} \\approx 25{,}6$ cm.</div>
+        <div class="answer">El otro cateto mide aproximadamente 25,6 cm.</div>
+      </div>
+
+      <h3 class="section-title">¿Es un triángulo rectángulo?</h3>
+
+      <div class="formula">
+        <div class="label">Clasificación de un triángulo según sus lados</div>
+        <p>Sea $a$ el lado más largo de un triángulo cualquiera, y $b$, $c$ los otros dos:</p>
+        <p>• Si $b^2 + c^2 = a^2$ → <strong>rectángulo</strong></p>
+        <p>• Si $b^2 + c^2 < a^2$ → <strong>obtusángulo</strong> (tiene un ángulo > 90°)</p>
+        <p>• Si $b^2 + c^2 > a^2$ → <strong>acutángulo</strong> (todos los ángulos < 90°)</p>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · clasificar</div>
+        <div class="problem">¿De qué tipo es un triángulo cuyos lados miden 7 cm, 8 cm y 11 cm?</div>
+        <div class="step"><span class="num">1.</span> El lado más largo es 11 cm. Comparo $11^2 = 121$ con $7^2 + 8^2 = 49 + 64 = 113$.</div>
+        <div class="step"><span class="num">2.</span> Como $113 < 121$, se cumple que $b^2 + c^2 < a^2$.</div>
+        <div class="answer">El triángulo es <strong>obtusángulo</strong>.</div>
+      </div>
+
+      <div class="quiz" data-quiz="6">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 4</div>
+          <div class="q-text">Calcula la hipotenusa de un triángulo rectángulo de catetos 3 cm y 4 cm.</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 4 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 5 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 6 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 7 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="3² + 4² = 9 + 16 = 25 → √25 = 5 cm. ¡El triángulo 3-4-5 es el más famoso!"></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 4</div>
+          <div class="q-text">La hipotenusa de un triángulo rectángulo mide 25 cm y un cateto, 15 cm. ¿El otro cateto?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 10 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 12 cm</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 20 cm</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 30 cm</button>
+          </div>
+          <div class="quiz-feedback" data-explain="c² = 25² − 15² = 625 − 225 = 400 → c = √400 = 20 cm."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 4</div>
+          <div class="q-text">Un triángulo tiene lados 6, 8 y 10 cm. ¿Qué tipo de triángulo es?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="true"><span class="letter">A</span> Rectángulo</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> Acutángulo</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> Obtusángulo</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> Equilátero</button>
+          </div>
+          <div class="quiz-feedback" data-explain="6² + 8² = 36 + 64 = 100 = 10². Como se cumple Pitágoras, es rectángulo."></div>
+        </div>
+
+        <div class="quiz-question" data-q="3">
+          <div class="q-num">Pregunta 4 de 4</div>
+          <div class="q-text">¿De qué tipo es un triángulo de lados 11, 17 y 15 cm?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> Rectángulo</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> Acutángulo</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> Obtusángulo</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Lado mayor: 17. 17² = 289. 11² + 15² = 121 + 225 = 346. Como 346 > 289, es acutángulo."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 7: ÁREAS DE POLÍGONOS
+  // ─────────────────────────────────────────
+  {
+    id: 7,
+    title: "Áreas de polígonos",
+    meta: "Fórmulas básicas · Herón",
+    priority: false,
+    content: `
+      <h3 class="section-title">Las fórmulas que tienes que saberte de memoria</h3>
+
+      <div class="formula">
+        <div class="label">Áreas conocidas</div>
+        <p><strong>Rectángulo:</strong> $A = b \\cdot a$</p>
+        <p><strong>Cuadrado:</strong> $A = l^2$</p>
+        <p><strong>Paralelogramo:</strong> $A = b \\cdot a$</p>
+        <p><strong>Rombo:</strong> $A = \\dfrac{d \\cdot d'}{2}$ &nbsp;(diagonales)</p>
+        <p><strong>Triángulo:</strong> $A = \\dfrac{b \\cdot a}{2}$ &nbsp;(base · altura / 2)</p>
+        <p><strong>Trapecio:</strong> $A = \\dfrac{b + b'}{2} \\cdot a$ &nbsp;(semi-suma de bases · altura)</p>
+        <p><strong>Polígono regular:</strong> $A = \\dfrac{\\text{perímetro} \\cdot ap}{2}$</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Apotema:</strong> es la distancia del centro al punto medio de un lado en un polígono regular. Se calcula con Pitágoras si conoces el lado y el radio.</div>
+      </div>
+
+      <h3 class="section-title">Fórmula de Herón</h3>
+      <div class="prose">
+        <p>Para calcular el área de cualquier triángulo si conoces solo <strong>los tres lados</strong> (sin saber la altura):</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Fórmula de Herón</div>
+        <p>Primero el semiperímetro:</p>
+        $$s = \\frac{a + b + c}{2}$$
+        <p>Luego el área:</p>
+        $$A = \\sqrt{s(s-a)(s-b)(s-c)}$$
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · Herón</div>
+        <div class="problem">Calcula el área de un triángulo de lados 11 cm, 13 cm y 20 cm.</div>
+        <div class="step"><span class="num">1.</span> Perímetro: $11 + 13 + 20 = 44$ cm. Semiperímetro: $s = 22$.</div>
+        <div class="step"><span class="num">2.</span> Calculo cada factor: $s-a = 22-11 = 11$, $s-b = 22-13 = 9$, $s-c = 22-20 = 2$.</div>
+        <div class="step"><span class="num">3.</span> Aplico Herón: $A = \\sqrt{22 \\cdot 11 \\cdot 9 \\cdot 2} = \\sqrt{4356} = 66$ cm².</div>
+        <div class="answer">El área es 66 cm².</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · trapecio isósceles (combinando Pitágoras y trapecio)</div>
+        <div class="problem">Calcula el área de un trapecio isósceles de bases 37 cm y 55 cm, con lado oblicuo 14 cm.</div>
+        <div class="step"><span class="num">1.</span> La diferencia de bases por mitad: $(55 - 37)/2 = 9$ cm. Esto es la base del triángulo rectángulo que forma cada lado oblicuo.</div>
+        <div class="step"><span class="num">2.</span> Calculo la altura con Pitágoras: $a = \\sqrt{14^2 - 9^2} = \\sqrt{115} \\approx 10{,}7$ cm.</div>
+        <div class="step"><span class="num">3.</span> Área del trapecio: $A = \\dfrac{37+55}{2} \\cdot 10{,}7 \\approx 492{,}2$ cm².</div>
+        <div class="answer">El área es aproximadamente 492,2 cm².</div>
+      </div>
+
+      <div class="quiz" data-quiz="7">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">Un triángulo tiene base 12 cm y altura 5 cm. ¿Cuál es su área?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 17 cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 30 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 60 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 120 cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="A = b·a/2 = 12·5/2 = 30 cm²."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">Un rombo tiene diagonales de 8 cm y 6 cm. ¿Cuál es su área?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 14 cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 24 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 48 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 28 cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="A = d·d'/2 = 8·6/2 = 24 cm²."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Un triángulo tiene lados 3, 4 y 5 cm. ¿Cuál es su área con la fórmula de Herón?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 5 cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 6 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 7,5 cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 12 cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="s = (3+4+5)/2 = 6. A = √(6·3·2·1) = √36 = 6 cm². (Es el triángulo rectángulo, podías comprobarlo con base·altura/2 = 3·4/2 = 6.)"></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 8: ÁREAS DE FIGURAS CURVAS
+  // ─────────────────────────────────────────
+  {
+    id: 8,
+    title: "Figuras curvas",
+    meta: "Círculo · sector · corona · elipse · parábola",
+    priority: false,
+    content: `
+      <h3 class="section-title">Áreas con $\\pi$</h3>
+
+      <div class="formula">
+        <div class="label">Las cinco fórmulas</div>
+        <p><strong>Círculo</strong> (radio $r$): &nbsp; $A = \\pi r^2$</p>
+        <p><strong>Sector circular</strong> (ángulo $\\alpha$ en grados): &nbsp; $A = \\pi r^2 \\cdot \\dfrac{\\alpha}{360}$</p>
+        <p><strong>Corona circular</strong> (entre dos radios $R$ y $r$): &nbsp; $A = \\pi(R^2 - r^2)$</p>
+        <p><strong>Elipse</strong> (semiejes $a$ y $b$): &nbsp; $A = \\pi a b$</p>
+        <p><strong>Segmento de parábola</strong> (en rectángulo $a \\times b$): &nbsp; $A = \\dfrac{2}{3} a b$</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Lo que más confunde:</strong> en el <em>sector</em> trabajas con un ángulo (grados); en la <em>corona</em> son dos círculos (resta de áreas); en la <em>elipse</em>, los ejes son completos pero la fórmula usa la <em>mitad</em> de cada uno.</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · sector circular</div>
+        <div class="problem">Calcula el área de un sector de 120° en un círculo de radio 6 cm.</div>
+        <div class="step"><span class="num">1.</span> Aplico la fórmula: $A = \\pi \\cdot 6^2 \\cdot \\dfrac{120}{360}$.</div>
+        <div class="step"><span class="num">2.</span> Simplifico: $A = 36\\pi \\cdot \\dfrac{1}{3} = 12\\pi$.</div>
+        <div class="step"><span class="num">3.</span> Numéricamente: $A \\approx 37{,}7$ cm².</div>
+        <div class="answer">El sector mide $12\\pi \\approx 37{,}7$ cm².</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · figura compuesta</div>
+        <div class="problem">En un cuadrado de 8 cm de lado hay un círculo inscrito de 2 cm de radio. ¿Cuál es el área coloreada (la parte del cuadrado fuera del círculo)?</div>
+        <div class="step"><span class="num">1.</span> Área del cuadrado: $8^2 = 64$ cm².</div>
+        <div class="step"><span class="num">2.</span> Área del círculo: $\\pi \\cdot 2^2 = 4\\pi \\approx 12{,}57$ cm².</div>
+        <div class="step"><span class="num">3.</span> Resto: $64 - 4\\pi \\approx 51{,}43$ cm².</div>
+        <div class="answer">El área coloreada es aproximadamente 51,4 cm².</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · elipse en rectángulo</div>
+        <div class="problem">Un rectángulo mide 18 cm × 12 cm y contiene una elipse inscrita. ¿Cuál es el área de la elipse?</div>
+        <div class="step"><span class="num">1.</span> Los ejes completos miden $2a = 18$ y $2b = 12$, así que $a = 9$ y $b = 6$.</div>
+        <div class="step"><span class="num">2.</span> $A = \\pi \\cdot 9 \\cdot 6 = 54\\pi \\approx 169{,}6$ cm².</div>
+        <div class="answer">La elipse tiene un área de unos 169,6 cm².</div>
+      </div>
+
+      <div class="quiz" data-quiz="8">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">¿Cuál es el área de un círculo de radio 5 cm?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 10π cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 25π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 50π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 100π cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="A = πr² = π·5² = 25π cm² ≈ 78,5 cm²."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">Un sector circular tiene radio 6 cm y abarca un ángulo de 90°. ¿Cuál es su área?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 6π cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 9π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 18π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 36π cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="A = π·6²·(90/360) = 36π·(1/4) = 9π cm²."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Una corona circular tiene radios exterior 5 cm e interior 3 cm. ¿Cuál es su área?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 4π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 8π cm²</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 16π cm²</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 34π cm²</button>
+          </div>
+          <div class="quiz-feedback" data-explain="A = π(R² − r²) = π(25 − 9) = 16π cm²."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 9: POLIEDROS
+  // ─────────────────────────────────────────
+  {
+    id: 9,
+    title: "Poliedros regulares",
+    meta: "Los cinco sólidos platónicos · dualidad",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Un <strong>poliedro</strong> es un cuerpo limitado por caras planas (polígonos). Es <strong>regular</strong> cuando cumple dos condiciones:</p>
+        <p>1. Todas sus caras son <em>polígonos regulares idénticos</em>.<br>
+        2. En cada vértice concurre el <em>mismo número de caras</em>.</p>
+      </div>
+
+      <h3 class="section-title">Los cinco sólidos platónicos</h3>
+      <div class="prose">
+        <p>Solo existen <strong>cinco</strong> poliedros regulares (no hay más, está demostrado matemáticamente). Platón los asoció con los elementos.</p>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Nombre</th><th>Caras</th><th>Vértices</th><th>Aristas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tetraedro (fuego)</td><td>4 triángulos</td><td>4</td><td>6</td></tr>
+          <tr><td>Cubo o hexaedro (tierra)</td><td>6 cuadrados</td><td>8</td><td>12</td></tr>
+          <tr><td>Octaedro (aire)</td><td>8 triángulos</td><td>6</td><td>12</td></tr>
+          <tr><td>Dodecaedro (universo)</td><td>12 pentágonos</td><td>20</td><td>30</td></tr>
+          <tr><td>Icosaedro (agua)</td><td>20 triángulos</td><td>12</td><td>30</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Fórmula de Euler</strong> (para cualquier poliedro convexo):
+        $$C + V - A = 2$$
+        Compruébalo con la tabla: por ejemplo, en el cubo: $6 + 8 - 12 = 2$. ✓</div>
+      </div>
+
+      <h3 class="section-title">Poliedros duales</h3>
+      <div class="prose">
+        <p>Si unimos los centros de las caras contiguas de un poliedro regular, obtenemos otro poliedro regular. Estos dos poliedros se llaman <strong>duales</strong>.</p>
+      </div>
+
+      <div class="formula">
+        <div class="label">Parejas de duales</div>
+        <p>• Cubo ↔ Octaedro</p>
+        <p>• Dodecaedro ↔ Icosaedro</p>
+        <p>• Tetraedro ↔ Tetraedro (dual de sí mismo)</p>
+        <p style="margin-top:8px;font-size:13px;color:var(--ink-soft);">En dos poliedros duales: el número de <em>caras</em> de uno = número de <em>vértices</em> del otro. Y comparten el mismo número de aristas.</p>
+      </div>
+
+      <div class="quiz" data-quiz="9">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 3</div>
+          <div class="q-text">¿Cuántas caras tiene un dodecaedro?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 8</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 10</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 12</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 20</button>
+          </div>
+          <div class="quiz-feedback" data-explain="El dodecaedro tiene 12 caras, todas pentágonos regulares. 'Dodeca' significa doce en griego."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 3</div>
+          <div class="q-text">¿Cuál es el dual del cubo?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> Tetraedro</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> Octaedro</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> Dodecaedro</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> Icosaedro</button>
+          </div>
+          <div class="quiz-feedback" data-explain="El cubo tiene 6 caras y 8 vértices; el octaedro tiene 8 caras y 6 vértices. Son duales."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 3</div>
+          <div class="q-text">Un icosaedro tiene 20 caras y 12 vértices. Por la fórmula de Euler, ¿cuántas aristas tiene?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 24</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> 28</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> 30</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 32</button>
+          </div>
+          <div class="quiz-feedback" data-explain="C + V − A = 2 → 20 + 12 − A = 2 → A = 30 aristas."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 10: ECUACIÓN DE LA RECTA
+  // ─────────────────────────────────────────
+  {
+    id: 10,
+    title: "Ecuación de la recta",
+    meta: "Pendiente · ordenada · representación",
+    priority: false,
+    content: `
+      <div class="prose">
+        <p>Una recta en el plano se puede describir con una <strong>ecuación</strong>. La forma más útil es la <em>ecuación explícita</em>, que ya conoces de funciones.</p>
+      </div>
+
+      <h3 class="section-title">Ecuación explícita</h3>
+
+      <div class="formula">
+        <div class="label">La fórmula reina</div>
+        $$y = mx + n$$
+        <p style="margin-top:8px;">• $m$ es la <strong>pendiente</strong> (lo inclinada que está la recta).</p>
+        <p>• $n$ es la <strong>ordenada en el origen</strong> (el punto donde la recta corta al eje Y).</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>¿Cómo leer la pendiente?</strong>
+        <br>• Si $m > 0$: la recta sube de izquierda a derecha.
+        <br>• Si $m < 0$: la recta baja.
+        <br>• Si $m = 0$: la recta es horizontal.
+        <br>• Cuanto mayor sea $|m|$, más inclinada.</div>
+      </div>
+
+      <h3 class="section-title">Calcular la pendiente entre dos puntos</h3>
+
+      <div class="formula">
+        <div class="label">Si conoces dos puntos $A(x_1, y_1)$ y $B(x_2, y_2)$</div>
+        $$m = \\frac{y_2 - y_1}{x_2 - x_1}$$
+      </div>
+
+      <h3 class="section-title">Casos especiales</h3>
+
+      <div class="formula">
+        <div class="label">Rectas horizontales y verticales</div>
+        <p><strong>Recta horizontal</strong> (pendiente 0) que pasa por $(a, b)$: &nbsp; $y = b$</p>
+        <p><strong>Recta vertical</strong> (pendiente infinita, no es función) que pasa por $(a, b)$: &nbsp; $x = a$</p>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Rectas paralelas</strong> tienen la <strong>misma pendiente</strong>. Si te piden una recta paralela a $y = 3x + 4$, su pendiente será $m = 3$.</div>
+      </div>
+
+      <h3 class="section-title">Ejemplos resueltos</h3>
+
+      <div class="example">
+        <div class="label">Ejemplo 1 · directo</div>
+        <div class="problem">Escribe la ecuación de la recta con pendiente $-7$ y ordenada en el origen $1$.</div>
+        <div class="step"><span class="num">1.</span> Sustituyo en $y = mx + n$ con $m = -7$ y $n = 1$.</div>
+        <div class="answer">$y = -7x + 1$</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo 2 · paralela con condición</div>
+        <div class="problem">Escribe la ecuación de la recta paralela a $y = 3x + 4$ que corta al eje vertical en el mismo punto que la recta $y = -x + 1$.</div>
+        <div class="step"><span class="num">1.</span> Paralela a $y = 3x + 4$ → misma pendiente: $m = 3$.</div>
+        <div class="step"><span class="num">2.</span> Corta el eje Y en el mismo punto que $y = -x + 1$ → en ese punto $x = 0$, así que $y = 1$. La ordenada es $n = 1$.</div>
+        <div class="answer">$y = 3x + 1$</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo 3 · dados dos puntos</div>
+        <div class="problem">Escribe la ecuación de la recta que pasa por $A(3, -1)$ y $B(1, 7)$.</div>
+        <div class="step"><span class="num">1.</span> Calculo la pendiente: $m = \\dfrac{7 - (-1)}{1 - 3} = \\dfrac{8}{-2} = -4$.</div>
+        <div class="step"><span class="num">2.</span> Sustituyo uno de los puntos para hallar $n$. Con $A(3, -1)$: $-1 = -4 \\cdot 3 + n \\Rightarrow n = 11$.</div>
+        <div class="answer">$y = -4x + 11$</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo 4 · punto y pendiente</div>
+        <div class="problem">Escribe la ecuación de la recta que pasa por $P(3, -1)$ y tiene pendiente $-5$.</div>
+        <div class="step"><span class="num">1.</span> Sustituyo el punto en $y = mx + n$ con $m = -5$: $-1 = -5 \\cdot 3 + n \\Rightarrow n = 14$.</div>
+        <div class="answer">$y = -5x + 14$</div>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo 5 · horizontal y vertical</div>
+        <div class="problem">a) Recta horizontal que pasa por $P(-1, 4)$.<br>b) Recta vertical que pasa por $Q(6, -5)$.</div>
+        <div class="step"><span class="num">a.</span> Horizontal → $y = $ (valor de la y del punto). <strong>$y = 4$</strong></div>
+        <div class="step"><span class="num">b.</span> Vertical → $x = $ (valor de la x del punto). <strong>$x = 6$</strong></div>
+      </div>
+
+      <h3 class="section-title">De forma general a explícita</h3>
+      <div class="prose">
+        <p>Si te dan algo como $3x - 3y = 6$, despeja la $y$ para sacar pendiente y ordenada:</p>
+      </div>
+
+      <div class="example">
+        <div class="label">Ejemplo · despejar y</div>
+        <div class="problem">¿Cuál es la pendiente y la ordenada en el origen de $3x - 3y = 6$?</div>
+        <div class="step"><span class="num">1.</span> Paso la $x$ al otro lado: $-3y = -3x + 6$.</div>
+        <div class="step"><span class="num">2.</span> Divido entre $-3$: $y = x - 2$.</div>
+        <div class="answer">Pendiente $m = 1$, ordenada $n = -2$.</div>
+      </div>
+
+      <div class="quiz" data-quiz="10">
+        <div class="quiz-label">Mini-test</div>
+        <div class="quiz-title">¿Lo has pillado?</div>
+
+        <div class="quiz-question" data-q="0">
+          <div class="q-num">Pregunta 1 de 5</div>
+          <div class="q-text">¿Cuál es la pendiente de la recta $y = -\\frac{2}{5}x + 2$?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 2</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> −2/5</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 5/2</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> −2</button>
+          </div>
+          <div class="quiz-feedback" data-explain="En y = mx + n, la pendiente es el coeficiente de x. Aquí m = −2/5."></div>
+        </div>
+
+        <div class="quiz-question" data-q="1">
+          <div class="q-num">Pregunta 2 de 5</div>
+          <div class="q-text">¿Cuál es la ecuación de la recta horizontal que pasa por (3, −7)?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> x = 3</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> x = −7</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> y = 3</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">D</span> y = −7</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Las rectas horizontales son del tipo y = constante. Como pasa por y = −7, la ecuación es y = −7."></div>
+        </div>
+
+        <div class="quiz-question" data-q="2">
+          <div class="q-num">Pregunta 3 de 5</div>
+          <div class="q-text">¿Qué pendiente tiene la recta que pasa por A(2, 3) y B(5, 9)?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> 1</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> 2</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> 3</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> 6</button>
+          </div>
+          <div class="quiz-feedback" data-explain="m = (9 − 3) / (5 − 2) = 6 / 3 = 2."></div>
+        </div>
+
+        <div class="quiz-question" data-q="3">
+          <div class="q-num">Pregunta 4 de 5</div>
+          <div class="q-text">¿Cuál de estas rectas es paralela a $y = -3x + 7$?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> y = 3x − 1</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">B</span> y = −3x + 2</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">C</span> y = 7x − 3</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> y = x/3 + 7</button>
+          </div>
+          <div class="quiz-feedback" data-explain="Las rectas paralelas tienen la misma pendiente. m = −3 en ambas."></div>
+        </div>
+
+        <div class="quiz-question" data-q="4">
+          <div class="q-num">Pregunta 5 de 5</div>
+          <div class="q-text">Despeja $y$ en $3x - 3y = 6$. ¿Cuáles son la pendiente y la ordenada?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false"><span class="letter">A</span> m = 3, n = 6</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">B</span> m = 1, n = 2</button>
+            <button class="quiz-option" data-correct="true"><span class="letter">C</span> m = 1, n = −2</button>
+            <button class="quiz-option" data-correct="false"><span class="letter">D</span> m = −1, n = 2</button>
+          </div>
+          <div class="quiz-feedback" data-explain="3x − 3y = 6 → −3y = −3x + 6 → y = x − 2. Por tanto m = 1, n = −2."></div>
+        </div>
+      </div>
+    `
+  },
+
+  // ─────────────────────────────────────────
+  // MÓDULO 11: AUTOEVALUACIÓN (PRIORIDAD)
+  // ─────────────────────────────────────────
+  {
+    id: 11,
+    title: "Autoevaluación final",
+    meta: "Ejercicios tipo página 225 · lo más probable que entre",
+    priority: true,
+    content: `
+      <div class="priority-banner">
+        <div class="label">⚠ Importante</div>
+        <div class="title">Trabajo previo al examen</div>
+        <div class="desc">Estos ejercicios son los que probablemente caerán. Hazlos a fondo, con los pasos completos.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 1: ángulos en la circunferencia</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En una circunferencia, $\\widehat{AB} = 100°$ y $\\widehat{CD} = 40°$. Halla los ángulos inscritos que abarcan cada arco.</div>
+        <div class="step"><span class="num">1.</span> Ángulo inscrito que abarca AB: $100° / 2 = 50°$.</div>
+        <div class="step"><span class="num">2.</span> Ángulo inscrito que abarca CD: $40° / 2 = 20°$.</div>
+        <div class="answer">Los ángulos inscritos miden 50° y 20° respectivamente.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 2: cortar un triángulo (semejanza)</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En el triángulo rectángulo ABC con cateto BC = 28 cm y hipotenusa AC = 35 cm, ¿a qué altura $x$ del vértice C hay que cortarlo para que la nueva hipotenusa mida 28 cm (se reduce 7 cm)?</div>
+        <div class="step"><span class="num">1.</span> Los triángulos son semejantes. La razón es: $28 / 35 = 4/5$.</div>
+        <div class="step"><span class="num">2.</span> El nuevo cateto será: $28 \\cdot 4/5 = 22{,}4$ cm.</div>
+        <div class="step"><span class="num">3.</span> Como el cateto original mide 28, la altura cortada es $x = 28 - 22{,}4 = 5{,}6$ cm.</div>
+        <div class="answer">Hay que cortar a 5,6 cm.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 3: altura del árbol y sombra de la farola</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En un parque, una persona de 1,8 m proyecta una sombra de 2,7 m. A su lado hay un árbol cuya sombra mide 12 m, y una farola de 4 m. <strong>a)</strong> ¿Cuánto mide el árbol? <strong>b)</strong> ¿Cuánto mide la sombra de la farola?</div>
+        <div class="step"><span class="num">a.</span> Proporción: $\\dfrac{1{,}8}{2{,}7} = \\dfrac{h}{12} \\Rightarrow h = \\dfrac{1{,}8 \\cdot 12}{2{,}7} = 8$ m.</div>
+        <div class="step"><span class="num">b.</span> Proporción: $\\dfrac{1{,}8}{2{,}7} = \\dfrac{4}{s} \\Rightarrow s = \\dfrac{4 \\cdot 2{,}7}{1{,}8} = 6$ m.</div>
+        <div class="answer">Árbol: 8 m. Sombra de la farola: 6 m.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 4: hallar $x$ con Pitágoras</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">Calcula $x$ en un cuadrado de diagonal 18 cm.</div>
+        <div class="step"><span class="num">1.</span> La diagonal divide al cuadrado en dos triángulos rectángulos isósceles, ambos catetos = $x$.</div>
+        <div class="step"><span class="num">2.</span> Por Pitágoras: $x^2 + x^2 = 18^2 \\Rightarrow 2x^2 = 324 \\Rightarrow x^2 = 162$.</div>
+        <div class="step"><span class="num">3.</span> $x = \\sqrt{162} \\approx 12{,}7$ cm.</div>
+        <div class="answer">El lado del cuadrado mide aproximadamente 12,7 cm.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 5: altura del triángulo (Herón + base·altura)</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">Calcula la altura sobre el lado de 17 cm en un triángulo de lados 25, 26 y 17 cm.</div>
+        <div class="step"><span class="num">1.</span> Calculo el área con Herón. Semiperímetro: $s = (25+26+17)/2 = 34$.</div>
+        <div class="step"><span class="num">2.</span> $A = \\sqrt{34 \\cdot 9 \\cdot 8 \\cdot 17} = \\sqrt{41616} = 204$ cm².</div>
+        <div class="step"><span class="num">3.</span> Como $A = b \\cdot h / 2$, despejo: $h = 2A/b = 2 \\cdot 204 / 17 = 24$ cm.</div>
+        <div class="answer">La altura mide 24 cm.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 6: área del trapecio (Pitágoras + área)</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En un trapecio isósceles de bases 8 m y 40 m con lados oblicuos de 34 m, calcula su altura $x$ y su área.</div>
+        <div class="step"><span class="num">1.</span> La diferencia entre bases por mitad: $(40-8)/2 = 16$ m.</div>
+        <div class="step"><span class="num">2.</span> Pitágoras: $x^2 = 34^2 - 16^2 = 1156 - 256 = 900 \\Rightarrow x = 30$ m.</div>
+        <div class="step"><span class="num">3.</span> Área: $A = \\dfrac{8+40}{2} \\cdot 30 = 24 \\cdot 30 = 720$ m².</div>
+        <div class="answer">Altura: 30 m. Área: 720 m².</div>
+      </div>
+
+      <h3 class="section-title">Tipo 7: área zona coloreada</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En un cuadrado de 8 cm de lado, hay un círculo central de radio 2 cm. ¿Cuál es el área coloreada (parte del cuadrado fuera del círculo)?</div>
+        <div class="step"><span class="num">1.</span> Cuadrado: $8^2 = 64$ cm².</div>
+        <div class="step"><span class="num">2.</span> Círculo: $\\pi \\cdot 2^2 = 4\\pi \\approx 12{,}57$ cm².</div>
+        <div class="step"><span class="num">3.</span> Resta: $64 - 4\\pi \\approx 51{,}43$ cm².</div>
+        <div class="answer">Área coloreada: $\\approx 51{,}4$ cm².</div>
+      </div>
+
+      <h3 class="section-title">Tipo 8: escalas (plano vivienda)</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">En el plano de una vivienda, una mesa de 5 m de largo se representa con un rectángulo de 2 cm. <strong>a)</strong> ¿Qué escala se usa? <strong>b)</strong> Si el pasillo mide 4 cm en el plano, ¿cuánto mide en realidad? <strong>c)</strong> Si la cocina mide 3 cm, ¿qué ancho real tiene?</div>
+        <div class="step"><span class="num">a.</span> 5 m = 500 cm. Escala = 2/500 = 1/250 → <strong>1:250</strong>.</div>
+        <div class="step"><span class="num">b.</span> Pasillo: $4 \\cdot 250 = 1000$ cm = <strong>10 m</strong>.</div>
+        <div class="step"><span class="num">c.</span> Cocina: $3 \\cdot 250 = 750$ cm = <strong>7,5 m</strong>.</div>
+      </div>
+
+      <h3 class="section-title">Tipo 9: plano de un camping a escala 1:3000</h3>
+      <div class="example">
+        <div class="label">Ejercicio resuelto</div>
+        <div class="problem">Un camping a escala 1:3000. <strong>a)</strong> Si la distancia en el plano de la enfermería a un contenedor es 5 cm, ¿qué distancia real? <strong>b)</strong> Una pista de pádel real de 10 m × 20 m, ¿qué dimensiones tiene en el plano?</div>
+        <div class="step"><span class="num">a.</span> $5 \\cdot 3000 = 15000$ cm = <strong>150 m</strong>.</div>
+        <div class="step"><span class="num">b.</span> 10 m = 1000 cm → $1000/3000 \\approx 0{,}33$ cm. 20 m = 2000 cm → $2000/3000 \\approx 0{,}67$ cm.</div>
+        <div class="answer">En el plano: aproximadamente 0,33 cm × 0,67 cm.</div>
+      </div>
+
+      <div class="tip">
+        <span class="icon">★</span>
+        <div><strong>Consejos antes del examen:</strong>
+        <br>• <strong>Dibuja siempre</strong> el problema antes de calcular. Te ayuda a ver qué tipo de problema es.
+        <br>• <strong>Escribe el proceso completo</strong>, no solo el resultado: si te equivocas en una operación, igual te puntúan el planteamiento.
+        <br>• <strong>Comprueba unidades</strong>: si trabajas en metros, el resultado debe estar en metros (o m²).
+        <br>• <strong>Revisa el orden de magnitud</strong>: si te sale que un árbol mide 0,5 m o 5000 m, algo va mal.</div>
+      </div>
+    `
+  }
+];
+
+
+// ============================================
+// LÓGICA DE NAVEGACIÓN E INTERACTIVIDAD
+// ============================================
+
+let currentModule = null;
+
+function renderHome() {
+  const grid = document.getElementById('moduleGrid');
+  const menuList = document.getElementById('menuList');
+  grid.innerHTML = '';
+  menuList.innerHTML = '';
+
+  MODULES.forEach(mod => {
+    // Tarjeta en home
+    const card = document.createElement('button');
+    card.className = 'module-card' + (mod.priority ? ' priority' : '');
+    card.innerHTML = `
+      <div class="num">${String(mod.id).padStart(2,'0')}</div>
+      <div class="info">
+        <div class="title">${mod.title}</div>
+        <div class="meta">${mod.meta}</div>
+      </div>
+      <div class="arrow">→</div>
+    `;
+    card.onclick = () => openModule(mod.id);
+    grid.appendChild(card);
+
+    // Item en menú
+    const item = document.createElement('button');
+    item.className = 'menu-item';
+    item.innerHTML = `<span class="num">${mod.id}</span> ${mod.title}`;
+    item.onclick = () => { toggleMenu(); openModule(mod.id); };
+    menuList.appendChild(item);
+  });
+}
+
+function openModule(id) {
+  currentModule = id;
+  const mod = MODULES.find(m => m.id === id);
+  if (!mod) return;
+
+  const container = document.getElementById('moduleContainer');
+  const home = document.getElementById('home');
+  home.style.display = 'none';
+
+  container.innerHTML = `
+    <main class="module-view active">
+      <div class="module-header">
+        <button class="back" onclick="goHome()">← Volver al índice</button>
+        <div class="num">Módulo ${String(mod.id).padStart(2,'0')}</div>
+        <h2>${mod.title}</h2>
+      </div>
+      ${mod.content}
+    </main>
+    <nav class="module-nav">
+      <button onclick="prevModule()" ${id===1?'disabled':''}>← Anterior</button>
+      <button class="home-btn" onclick="goHome()" aria-label="Inicio">⌂</button>
+      <button onclick="nextModule()" ${id===MODULES.length?'disabled':''}>Siguiente →</button>
+    </nav>
+  `;
+
+  // Activar quizzes
+  attachQuizListeners();
+
+  // Renderizar MathJax
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise([container]).catch(e => console.log(e));
+  }
+
+  // Scroll al top
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function attachQuizListeners() {
+  document.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.addEventListener('click', handleQuizClick);
+  });
+}
+
+function handleQuizClick(e) {
+  const btn = e.currentTarget;
+  const question = btn.closest('.quiz-question');
+  if (question.dataset.answered === 'true') return;
+
+  const isCorrect = btn.dataset.correct === 'true';
+  const allOptions = question.querySelectorAll('.quiz-option');
+
+  allOptions.forEach(opt => {
+    opt.disabled = true;
+    if (opt.dataset.correct === 'true') opt.classList.add('correct');
+  });
+  if (!isCorrect) btn.classList.add('wrong');
+
+  const feedback = question.querySelector('.quiz-feedback');
+  feedback.classList.add('show');
+  feedback.classList.add(isCorrect ? 'correct' : 'wrong');
+  const explain = feedback.dataset.explain;
+  feedback.innerHTML = `<strong>${isCorrect ? '¡Bien!' : 'No exactamente.'}</strong> ${explain}`;
+
+  question.dataset.answered = 'true';
+
+  // Re-renderizar MathJax en el feedback
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise([feedback]).catch(e => {});
+  }
+}
+
+function goHome() {
+  document.getElementById('moduleContainer').innerHTML = '';
+  document.getElementById('home').style.display = '';
+  currentModule = null;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function prevModule() {
+  if (currentModule > 1) openModule(currentModule - 1);
+}
+function nextModule() {
+  if (currentModule < MODULES.length) openModule(currentModule + 1);
+}
+
+function toggleMenu(e) {
+  const overlay = document.getElementById('menuOverlay');
+  overlay.classList.toggle('show');
+}
+
+// INICIO
+renderHome();
+
+</script>
+
+</body>
+</html>
